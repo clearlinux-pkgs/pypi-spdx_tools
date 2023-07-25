@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-spdx_tools
-Version  : 0.7.1
-Release  : 1
-URL      : https://files.pythonhosted.org/packages/af/bc/efd468c59c9c694181f8fd3dc80d47035b26d34efb6e1b6cf79375889345/spdx-tools-0.7.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/af/bc/efd468c59c9c694181f8fd3dc80d47035b26d34efb6e1b6cf79375889345/spdx-tools-0.7.1.tar.gz
+Version  : 0.8.0
+Release  : 2
+URL      : https://files.pythonhosted.org/packages/f4/88/eaf9d0174a55f71349851a3da7b76e0c7fe6c88c510e7c860616346e721e/spdx-tools-0.8.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/f4/88/eaf9d0174a55f71349851a3da7b76e0c7fe6c88c510e7c860616346e721e/spdx-tools-0.8.0.tar.gz
 Summary  : SPDX parser and tools.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -16,22 +16,15 @@ Requires: pypi-spdx_tools-license = %{version}-%{release}
 Requires: pypi-spdx_tools-python = %{version}-%{release}
 Requires: pypi-spdx_tools-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(py)
 BuildRequires : pypi(setuptools)
 BuildRequires : pypi(setuptools_scm)
-BuildRequires : pypi-pluggy
-BuildRequires : pypi-pytest
-BuildRequires : pypi-tox
-BuildRequires : pypi-virtualenv
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
 
 %description
 # Python library to parse, validate and create SPDX documents
-| Linux                          | macOS                         | Windows                         |
-|:-------------------------------|:------------------------------|:--------------------------------|
-| [ ![Linux build status][1]][2] | [![macOS build status][3]][4] | [![Windows build status][5]][6] |
+CI status (Linux, macOS and Windows): [![Install and Test][1]][2]
 
 %package bin
 Summary: bin components for the pypi-spdx_tools package.
@@ -64,10 +57,13 @@ Summary: python3 components for the pypi-spdx_tools package.
 Group: Default
 Requires: python3-core
 Provides: pypi(spdx_tools)
+Requires: pypi(beartype)
 Requires: pypi(click)
+Requires: pypi(license_expression)
 Requires: pypi(ply)
 Requires: pypi(pyyaml)
 Requires: pypi(rdflib)
+Requires: pypi(semantic_version)
 Requires: pypi(uritools)
 Requires: pypi(xmltodict)
 
@@ -76,10 +72,10 @@ python3 components for the pypi-spdx_tools package.
 
 
 %prep
-%setup -q -n spdx-tools-0.7.1
-cd %{_builddir}/spdx-tools-0.7.1
+%setup -q -n spdx-tools-0.8.0
+cd %{_builddir}/spdx-tools-0.8.0
 pushd ..
-cp -a spdx-tools-0.7.1 buildavx2
+cp -a spdx-tools-0.8.0 buildavx2
 popd
 
 %build
@@ -87,7 +83,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683223792
+export SOURCE_DATE_EPOCH=1690301403
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -132,8 +128,8 @@ popd
 
 %files bin
 %defattr(-,root,root,-)
-/usr/bin/pyspdxtools_convertor
-/usr/bin/pyspdxtools_parser
+/usr/bin/pyspdxtools
+/usr/bin/pyspdxtools3
 
 %files license
 %defattr(0644,root,root,0755)

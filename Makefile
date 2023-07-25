@@ -1,5 +1,5 @@
 PKG_NAME := pypi-spdx_tools
-URL = https://files.pythonhosted.org/packages/af/bc/efd468c59c9c694181f8fd3dc80d47035b26d34efb6e1b6cf79375889345/spdx-tools-0.7.1.tar.gz
+URL = https://files.pythonhosted.org/packages/f4/88/eaf9d0174a55f71349851a3da7b76e0c7fe6c88c510e7c860616346e721e/spdx-tools-0.8.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common

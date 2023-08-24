@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-spdx_tools
-Version  : 0.8.0
-Release  : 2
-URL      : https://files.pythonhosted.org/packages/f4/88/eaf9d0174a55f71349851a3da7b76e0c7fe6c88c510e7c860616346e721e/spdx-tools-0.8.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/f4/88/eaf9d0174a55f71349851a3da7b76e0c7fe6c88c510e7c860616346e721e/spdx-tools-0.8.0.tar.gz
+Version  : 0.8.1
+Release  : 3
+URL      : https://files.pythonhosted.org/packages/28/2d/c3982e35bea2be16c529074a668acd851e8381acd9e2acaa830cc36bd039/spdx-tools-0.8.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/28/2d/c3982e35bea2be16c529074a668acd851e8381acd9e2acaa830cc36bd039/spdx-tools-0.8.1.tar.gz
 Summary  : SPDX parser and tools.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -72,10 +72,10 @@ python3 components for the pypi-spdx_tools package.
 
 
 %prep
-%setup -q -n spdx-tools-0.8.0
-cd %{_builddir}/spdx-tools-0.8.0
+%setup -q -n spdx-tools-0.8.1
+cd %{_builddir}/spdx-tools-0.8.1
 pushd ..
-cp -a spdx-tools-0.8.0 buildavx2
+cp -a spdx-tools-0.8.1 buildavx2
 popd
 
 %build
@@ -83,7 +83,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1690301403
+export SOURCE_DATE_EPOCH=1692893854
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib

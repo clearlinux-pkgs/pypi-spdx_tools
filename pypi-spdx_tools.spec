@@ -5,7 +5,7 @@
 #
 Name     : pypi-spdx_tools
 Version  : 0.8.2
-Release  : 4
+Release  : 5
 URL      : https://files.pythonhosted.org/packages/32/d8/a67445be5981469fdbaf7f765f53c920f699e7e512cc931b650a935c3199/spdx-tools-0.8.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/32/d8/a67445be5981469fdbaf7f765f53c920f699e7e512cc931b650a935c3199/spdx-tools-0.8.2.tar.gz
 Summary  : SPDX parser and tools.
